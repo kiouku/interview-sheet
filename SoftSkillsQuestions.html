@@ -1,0 +1,199 @@
+<h1>Previous experience</h1>
+<h2 id="AndroidResearch">Android developer</h2>
+<ul>
+    <li>
+        <strong>Situation</strong>: I worked as an Android developer for the e-learning research team within the artificial intelligence
+        department. They were trying to conduct a research about how people with visual impaired can interact with the mobile
+        devices whose main input mecanishm is through a screen interaction and in particular in the field of serious games
+        on Android platform. At that time, on Android 4.0 there was no support to develop accesible games
+    </li>
+    <li>
+        <strong>Task</strong> At first there was no clear goal. Just to develop a accessible minesweeper prototype to acquire a basic
+        knowdedge of developing Android applications and how we could solve the design challenges that involve to develop
+        a game with an effective feedback mecanishm for blind people.
+    </li>
+    <li>
+        <strong>Action:</strong> Given the uncertanty of the project we decided to use scrum as a methodology to reduce the feedback
+        cycle and incrementally develop different game prototypes: Mineweeper, simplistic golf game, find a target on the
+        screen, text adventure game...After the first two game protopypes we noticed we could extract common functionality
+        and helpers to a framework to help to develop games for blind people. Each of the game prototypes we contributed
+        with some feature: Minesweeper -> TTS and haptic feeback or Zarddnik -> 3D sound feedback.
+    </li>
+    <li>
+        <strong>Result:</strong> In the end as an outcome of the project we developed 4 games that are published on Google play and
+        the framework.
+    </li>
+</ul>
+
+<h2 id="TVVOD">VOD - TV Application developer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> I worked as a C++ software engineer for a telecommunications company (mirada)in the company's
+        product called Inspire. There were two components: a middleware and a GUI written using c++, qt and qml. The Middleware
+        was used decouple our implementations from different STB providers and to implement new functionality that was not
+        provided by other third parties such directly by us such as VOD support multimedia, PVR... The GUI was the product
+        built on the top of the middleware using MVC.
+    </li>
+    <li>
+        <strong>Task:</strong> Implement VOD support in the company's middleware. At first RTSP. Later HLS was also required for
+        Fox and HBO VOD catalog. So far implementation just supported traditional cable TV but no VOD protocols over the
+        network. Nobody had experience with this technologies within the company.
+    </li>
+    <li>
+        <strong>Action:</strong> I was responsible of designing, developing and even integrating on customer site of these VOD features.
+        Our video player in the middleware had to be decouple from the low level details of every protocol specific implementation
+        since it could play vod, tv, multimedia video/audio. Within VOD you had to support both protocols. To solve this
+        we used strategy and template method patterns to have an abstraction that allow us to have shared logic between all
+        the different playback mecahism that the lower layers had to deal with. Also state pattern was used to implement
+        the RTSP and HLS protocols. Also the GUI was extended to support the specific requirements of the VOD player.
+    </li>
+    <li>
+        <strong>Result:</strong> We manage to deploy to production our RTSP solution for Cablevision in Monterrey and Televisa in
+        Mexico City. Some of the largest tv networks in Mexico under the name of Izzi. HLS solution was deployed as a pilot
+        a small scale with Fox and HBO integration, again,for Cablecom and Televisa.
+    </li>
+    </strong>
+</ul>
+
+<h2 id="TVNetflix">Netflix - TV application developer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong>I worked as a C++ software engineer for a telecommunications company (mirada)in the company's
+        product called Inspire. There were two components: a middleware and a GUI written using c++, qt and qml. The Middleware
+        was used decouple our implementations from different STB providers and to implement new functionality that was not
+        provided by directly by us such as VOD support. The GUI was the product built on the top of the middleware using
+        MVC.
+    </li>
+    <li>
+        <strong>Task:</strong> Integration netflix in our middleware.
+    </li>
+    <li>
+        <strong>Action:</strong> Integrate chromium project and extend it to allow hardware decoding in our stb target plaftforms.
+        This was important to support netflix playback with native decoding since software decoding with chromium barely
+        reached 10 FTS.
+    </li>
+    <li>
+        <strong>Result:</strong> Working with other 3 engineers prototype that was showcased to management in the company.
+    </li>
+</ul>
+
+<h2 id="NavigationIntegration">Navigation Integration engineer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> I joined as Software Engineer in the IVI integration team on Here Technologies. My team was in
+        charge of implementating a customer specific protocol (sort of protobuf interface)using the company's navigation
+        core libraries for the premium Audi, Porsche, VW cars. This protocol was used to communicate with companies modules
+        that implemented for example, the HMI or voice recognizion engine (Nuance). By the time I joined customer wanted
+        to cancel the project since the current organizational model was not delivering the features on time. Also the integration
+        effort was clearly underestimated. A team of high paid externals was hired to solve the problem with no good results.
+    </li>
+    <li>
+        <strong>Task:</strong> I had to use the company's automotive navigation libraries to implement a set of undocumented stateful
+        interfaces in C++ 11. This was specially complicated in the voice search interfaces. I was one the internals hired
+        to take over the untested, undocumented search voice input and haptic search features and in sort make them work
+        ASAP.
+    </li>
+    <li>
+        <strong>Action:</strong> From that point on we organized two weekly online meetings with engineers from customer site to
+        gather information regarding how they wanted to use the voice search interface. I have to informally discuss and
+        agree how to extend the company's sdk with the search team to facilitate the integration of these features. One example
+        is a new structured search api. Implement with tight deadlines all the business rules and implementation details
+        that these interfaces required and extend the company's sdk whenever something might not be a customer specific functionality
+        but rather something increases the value of the product.
+    </li>
+    <li>
+        <strong>Result:</strong> Customer did not cancel the project and with lots of effort, weekly releases with lots of customer
+        feedback, we had one year and a half later, a functional search library that implemented all the voice and structured
+        search use cases for the customer and the product was approved and shipped to be installed in the new customer premium
+        cars.
+    </li>
+</ul>
+
+
+<h2 id="NavigationHighStandard">Highest Quality Standards - Navigation Integration engineer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> I joined as Software Engineer in the IVI integration team on Here Technologies. My team was in
+        charge of implementating a customer specific protocol (sort of protobuf interface)using the company's navigation
+        core libraries for the premium Audi, Porsche, VW cars. This protocol was used to communicate with companies modules
+        that implemented for example, the HMI or voice recognizion engine (Nuance). By the time I joined customer wanted
+        to cancel the project since the current organizational model was not delivering the features on time. Also the integration
+        effort was clearly underestimated. A team of high paid externals was hired to solve the problem with no good results.
+    </li>
+    <li>
+        <strong>Task:</strong> The code base for search integration had a lot of logic unstructured and it was untested but we still
+        had to deliver new features with new people joining the team.
+    </li>
+    <li>
+        <strong>Action:</strong> Write integration tests as characterization that kept the code invariant whenever a particular area
+        of the code had to be extended
+    </li>
+    <li>
+        <strong>Result:</strong> After 1 year we develop 3 suits of tests: functional tests, unit tests and regression tests. Architecture
+        implementation could be change entirely with no problem as long as the suit of tests passed.
+    </li>
+</ul>
+
+
+<h2 id="SearchEngineer">Search engineer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> After that experience I joined the R&D Offline Search team within automotive business unit. The
+        team provides c++ libraries with search algorithms (geocoding, reverse_geocoding, structured_search, one_box search,
+        next_valid_character_search...) to find addresses, point of interest, POI categories, phonemes... in location data
+        which is structured in an SQL database.
+    </li>
+    <li>
+        <strong>Task:</strong> We needed wanted to outsource the maintanance of one of our projects.
+    </li>
+    <li>
+        <strong>Action:</strong>I helped with the design of the interview process by providing technical questions to other engineers
+        that performed interviews in our team.
+    </li>
+    <li>
+        <strong>Result:</strong> We are more fair with all the candidates since we appply the same kind of questions to everybody
+        for the same position.
+    </li>
+</ul>
+
+<h2 id="SearchEngineerOutsourcing">Search engineer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> After that experience I joined the R&D Offline Search team within automotive business unit. The
+        team provides c++ libraries with search algorithms (geocoding, reverse_geocoding, structured_search, one_box search,
+        next_valid_character_search...) to find addresses, point of interest, POI categories, phonemes... in location data
+        which is structured in an SQL database.
+    </li>
+    <li>
+        <strong>Task:</strong> Extend search library with new functionality to geocode based on ids had to be implemented. The goal
+        was reduce the size of the database by reusing some of the routing/common tables to implement the search instead
+        of using the search index.
+    </li>
+    <li>
+        <strong>Action:</strong> We gather the requirements from the customer and implement the features with clear acceptance criteria.
+        A particular set of functional test with several corner cases had to be working
+    </li>
+    <li>
+        <strong>Result:</strong> final feature was shipped two weeks ago. Waiting for feedback.
+    </li>
+</ul>
+
+<h2 id="SearchEngineerLearn">Search engineer</h2>
+<ul>
+    <li>
+        <strong>Situation:</strong> After that experience I joined the R&D Offline Search team within automotive business unit. The
+        team provides c++ libraries with search algorithms (geocoding, reverse_geocoding, structured_search, one_box search,
+        next_valid_character_search...) to find addresses, point of interest, POI categories, phonemes... in location data
+        which is structured in an SQL database.
+    </li>
+    <li>
+        <strong>Task:</strong> We want to make our interface stateless and RESTful
+    </li>
+    <li>
+        <strong>Action:</strong> I'm doing a Software as a service course to learn web services development with ruby on rails. The
+        course is given by Berkely univeristy on EDX and another one on Udacity to desirn REST API.
+    </li>
+    <li>
+        <strong>Result:</strong> Make better design decisions and help others regarding our API design.
+    </li>
+</ul>
