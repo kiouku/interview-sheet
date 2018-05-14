@@ -965,6 +965,39 @@
 
 				<p>This algorithm never needed to compare all the differences to one another, saving it an entire iteration.</p>
 
+
+				<h3>
+					<strong>Dynamic Programming</strong>
+				</h3>
+
+				<h4>Definition:</h4>
+
+				<ul>
+					<li>It is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each
+						of those subproblems just once, and storing their solutions. </li>
+
+					<li> The next time the same subproblem occurs, instead of recomputing its solution, one simply looks up the previously computed
+						solution, thereby saving computation time at the expense of a (hopefully) modest expenditure in storage space.</li>
+					<ul>
+						<li>Find the recursion in the problem.</li>
+						<li>Top-down: store the answer for each subproblem in a table to avoid having to recompute them.</li>
+						<li>Bottom-up: Find the right order to evaluate the results so that partial results are available when needed.</li>
+					</ul>
+				</ul>
+
+				<h4>What you need to know:</h4>
+
+				<ul>
+					<li>Memoization is a term describing an optimization technique where you cache previously computed results, and return the
+						cached result when the same computation is needed again. </li>
+					<li>Dynamic programming is typically implemented using tabulation, but can also be implemented using memoization.</li>
+					<li>When using tabulation you solve the problem "bottom up", i.e., by solving all related sub-problems first, typically
+						by filling up an n-dimensional table. Based on the results in the table, the solution to the "top" / original problem
+						is then computed.</li>
+					<li> When using memoization, a map of already solved sub problems is maintained. You do it "top down" in the sense that you
+						solve the "top" problem first (which typically recurses down to solve the sub-problems).</li>
+				</ul>
+
 				<h2>Polymorphism</h2>
 				<p>From type theory is the provision of a single interface to entities of different types</p>
 				<h3>Types</h3>
@@ -1046,137 +1079,6 @@
 					<li>Opacity Opacity is the tendency of a module to be difficult to understand. </li>
 					<li>Needless complexity This may very well be the most important smell of bad design. </li>
 				</ul>
-
-				<h2>Programming languages</h2>
-
-				<h3>C++</h3>
-				<ul>
-					<li>std::set vs std::unordered_set vs std::map vs std::unordered_map</li>
-					<li>std::vector vs std::list vs std::forward_list vs std::deque cost of inserting an element at the beginning</li>
-					<li>Resource management. RAII. Locks, memory, files</li>
-					<li>std::unique_ptr vs std::shared_ptr vs std::weak_ptr vs std::auto_ptr</li>
-					<li>Pass by value vs pass by ref vs pass by forward/univesal reference vs pass by pointer</li>
-					<li>Dynamic polymorphism. Virtual abstract classes and interfaces in C++</li>
-					<li>Static polymorphism. Templates</li>
-					<li>Mutable. Usage to implement lazy evaluation and member function syncronization</li>
-					<li>Volatile to avoid compiler optimization</li>
-					<li>Tools. clang-tidy </li>
-				</ul>
-
-				<h3>Java</h3>
-				<h4>
-					<strong>Collections</strong>
-				</h4>
-
-				<h4>
-					<strong>GC basics</strong>
-				</h4>
-				<ul>
-					<li>GC strategies and implementations</li>
-					<p>
-						Automatic garbage collection is the process of looking at heap memory, identifying which objects are in use and which are
-						not, and deleting the unused objects. An in use object, or a referenced object, means that some part of your program
-						still maintains a pointer to that object. An unused object, or unreferenced object, is no longer referenced by any
-						part of your program. So the memory used by an unreferenced object can be reclaimed. In a programming language like
-						C, allocating and deallocating memory is a manual process. In Java, process of deallocating memory is handled automatically
-						by the garbage collector. The basic process can be described as follows.
-					</p>
-					<li>How it works</li>
-					<ul>
-						<li>Step 1: Marking</li>
-						The first step in the process is called marking. This is where the garbage collector identifies which pieces of memory are
-						in use and which are not. All objects are scanned in the marking phase to make this determination. This can be a very
-						time consuming process if all objects in a system must be scanned.
-						<li>Step 2: Normal Deletion</li>
-						Normal deletion removes unreferenced objects leaving referenced objects and pointers to free space.The memory allocator holds
-						references to blocks of free space where new object can be allocated.
-						<li>Step 2a: Deletion with Compacting</li>
-						To further improve performance, in addition to deleting unreferenced objects, you can also compact the remaining referenced
-						objects. By moving referenced object together, this makes new memory allocation much easier and faster.
-					</ul>
-				</ul>
-				<h4>
-					<strong> Generational Garbage Collection</strong>
-				</h4>
-				<ul>
-					<li>
-						Having to mark and compact all the objects in a JVM is inefficient. As more and more objects are allocated, the list of objects
-						grows and grows leading to longer and longer garbage collection time. However, empirical analysis of applications has
-						shown that most objects are short lived. The information learned from the object allocation behavior can be used to
-						enhance the performance of the JVM. Therefore, the heap is broken up into smaller parts or generations. The heap parts
-						are: Young Generation, Old or Tenured Generation, and Permanent Generation.
-					</li>
-					<li>
-						The Young Generation is where all new objects are allocated and aged. When the young generation fills up, this causes a minor
-						garbage collection. Minor collections can be optimized assuming a high object mortality rate. A young generation full
-						of dead objects is collected very quickly. Some surviving objects are aged and eventually move to the old generation.
-					</li>
-					<li>
-						Stop the World Event - All minor garbage collections are "Stop the World" events. This means that all application threads
-						are stopped until the operation completes. Minor garbage collections are always Stop the World events.
-					</li>
-					<li>The Old Generation is used to store long surviving objects. Typically, a threshold is set for young generation object
-						and when that age is met, the object gets moved to the old generation. Eventually the old generation needs to be collected.
-						This event is called a major garbage collection.
-					</li>
-					<li>
-						Major garbage collection are also Stop the World events. Often a major collection is much slower because it involves all
-						live objects. So for Responsive applications, major garbage collections should be minimized. Also note, that the length
-						of the Stop the World event for a major garbage collection is affected by the kind of garbage collector that is used
-						for the old generation space.
-					</li>
-					<li>
-						The Permanent generation contains metadata required by the JVM to describe the classes and methods used in the application.
-						The permanent generation is populated by the JVM at runtime based on classes in use by the application. In addition,
-						Java SE library classes and methods may be stored here. Classes may get collected (unloaded) if the JVM finds they
-						are no longer needed and space may be needed for other classes. The permanent generation is included in a full garbage
-						collection.
-					</li>
-				</ul>
-				<h4>
-					<strong>GC Aging process</strong>
-					http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
-				</h4>
-				<h4>
-					<strong>Available switches for GC</strong>
-				</h4>
-				<ul>
-					<li>Learn more about the VM</li>
-					<li>Collections: Vector List Map Set</li>
-				</ul>
-
-				<h4>
-					<strong>Garbage Collector</strong>
-				</h4>
-
-				<ul>
-					<li>GC strategies and implementations</li>
-				</ul>
-
-				<h4>
-					<strong>Java Virtual machine</strong>
-				</h4>
-
-				<ul>
-					<li></li>
-				</ul>
-
-				<h4>
-					<strong>Type Erasure</strong>
-				</h4>
-
-				<p>Generics were introduced to the Java language to provide tighter type checks at compile time and to support generic programming.
-					To implement generics, the Java compiler applies type erasure to:</p>
-				<ul>
-					<li>Replace all type parameters in generic types with their bounds or Object if the type parameters are unbounded. The produced
-						bytecode, therefore, contains only ordinary classes, interfaces, and methods.</li>
-					<li>Insert type casts if necessary to preserve type safety.</li>
-					<li>
-						Generate bridge methods to preserve polymorphism in extended generic types.</li>
-				</ul>
-				<p>Type erasure ensures that no new classes are created for parameterized types; consequently, generics incur no runtime
-					overhead.
-				</p>
 
 				<h2>Network</h2>
 
