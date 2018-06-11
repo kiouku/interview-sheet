@@ -67,5 +67,3 @@ The CMS collector should be used for applications that require low pause times a
 - The G1 Garbage Collector
 The Garbage First or G1 garbage collector is available in Java 7 and is designed to be the long term replacement for the CMS collector. The G1 collector is a parallel, concurrent, and incrementally compacting low-pause garbage collector that has quite a different layout from the other garbage collectors described previously.
 
-
-

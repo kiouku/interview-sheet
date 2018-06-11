@@ -26,7 +26,6 @@ TODO
 
 ## TCP
 TCP provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating by an IP network.
-				</p>
 
 				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Tcp_state_diagram_fixed_new.svg/1194px-Tcp_state_diagram_fixed_new.svg.png"
 				 width="796" height="600" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Tcp_state_diagram_fixed_new.svg/1194px-Tcp_state_diagram_fixed_new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Tcp_state_diagram_fixed_new.svg/1592px-Tcp_state_diagram_fixed_new.svg.png 2x"
@@ -57,10 +56,10 @@ Cookies are arbitrary pieces of data, usually chosen and first sent by the web s
 
 ### Message format
 - Request
-A request line (e.g., GET /images/logo.png HTTP/1.1, which requests a resource called /images/logo.png from the server).</li>
-Request header fields (e.g., Accept-Language: en).</li>
-An empty line.</li>
-An optional message body.</li>
+A request line (e.g., GET /images/logo.png HTTP/1.1, which requests a resource called /images/logo.png from the server).
+Request header fields (e.g., Accept-Language: en).
+An empty line.
+An optional message body.
 
 - Response
 A status line which includes the status code and reason message (e.g., HTTP/1.1 200 OK, which indicates that the client's request succeeded).
