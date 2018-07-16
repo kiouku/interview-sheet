@@ -8,10 +8,9 @@ An algorithm that searches a tree (or graph) by searching levels of the tree fir
 
 * It finds every node on the same level, most often moving left to right.
 * While doing this it tracks the children nodes of the nodes on the current level.
-* When finished examining a level it moves to the left most node on the next level.
-* The bottom-right most node is evaluated last (the node that is deepest and is farthest right of it&rsquo;s level).
 
 ### What you need to know			
+* It can be used to computed shortest path to every node in graph with edges of weight 1 
 * Optimal for searching a tree that is wider than it is deep.
 * Uses a queue to store information about the tree while it traverses a tree.
 * Because it uses a queue it is more memory intensive than **depth first search**.
@@ -56,6 +55,20 @@ O(|E| + |V|)</li>
 * Breadth First Search tends to be a looping algorithm.
 * Depth First Search tends to be a recursive algorithm.
 
+## Dijkstra shortest path
+
+### Definition
+
+Traveses the graph as breadth search with the peculiarity of applying Dijstra greedy criteria to select the next node to be procesed. Dijkstra Greedy criterion is the sum of the shortest path until the previous node plus the weight of the edge that connects to the still unvisited node. 
+
+### What you need to know:
+
+* It works in any directed graph with non-negative edge lengths
+* It computes the shortest paths from a source vertex to all other vertices.
+* It can be optimized to linear time by using a heap where each vertex not visited connected to a vertex already visited is stored using as key the Dijkstra greedy criteria for that node.
+
+### Big O efficiency
+O(|E| + |V|)</li>
 
 ## Comparison sort algorithms
 
@@ -168,8 +181,6 @@ Worst Case Sort: O(n<sup>2</sup>)
 * Merge sort parallelizes well and can achieve close to linear speedup with a trivial implementation; heapsort is not an obvious candidate for a parallel algorithm.
 * Merge sort can be adapted to operate on singly linked lists with O(1) extra space. Heapsort can be adapted to operate on doubly linked lists with only O(1) extra space overhead.
 * Merge sort is used in external sorting; heapsort is not. Locality of reference is the issue.
-
-
 
 ## Heap Sort
 
@@ -318,3 +329,24 @@ The next time the same subproblem occurs, instead of recomputing its solution, o
 * Dynamic programming is typically implemented using tabulation, but can also be implemented using memoization.
 * When using tabulation you solve the problem "bottom up", i.e., by solving all related sub-problems first, typically by filling up an n-dimensional table. Based on the results in the table, the solution to the "top" / original problemis then computed.
 * When using memoization, a map of already solved sub problems is maintained. You do it "top down" in the sense that yousolve the "top" problem first (which typically recurses down to solve the sub-problems).
+
+
+# Montecarlo estimation 
+Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results.
+
+One of the basic examples of getting started with the Monte Carlo algorithm is the estimation of Pi. 
+
+We know that area of the square is 1 unit sq while that of circle is pi * (1/2)^2 = pi/4  
+
+Now for a very large number of generated points,
+
+pi = 4 * num/num of point generated
+
+By Pythagorean theorem we can compute the distance from the center of a circle to any point:
+
+d = sqrt((x1 - x2)^2 + (y1 - y2)^2)
+
+when radio is r = 1 and x2,y2 is the origin
+
+x1^2 + y1^2 < 1
+

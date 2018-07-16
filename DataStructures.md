@@ -97,6 +97,7 @@
 * Heaps where the parent key is greater than or equal to (≥) the child keys are called max-heaps; those where it is less than or equal to (≤) are called min-heaps.
 * Binary heaps are also commonly employed in the heapsort sorting algorithm, which is an in-place algorithm owing to the fact that binary heaps can be implemented as an implicit data structure, storing keys in an array and using their relative positions within that array to represent child-parent relationships.
 * Used to implement priority queues.
+* Most important operations: extract-min and insertion. Additionally, delete and 
 
 ### Time cost using Big O notation 
 
@@ -104,7 +105,7 @@
 | ---------------------|:-----------------------:|:------| 
 | Indexing             | O(n)                    | O(n)  |
 | Search               | O(n)                    | O(n)  |
-| Search  Min          | O(1)                    | O(1)  |
+| Search  Min          | O(log n)                | O(n)  |
 | Insertion            | O(log n)                | O(n)  | 
 | Delete               | O(log n)                | O(n)  |
 

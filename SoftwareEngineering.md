@@ -32,7 +32,8 @@ Duck typing is concerned with establishing the suitability of an object for some
 
 ## Agile software development
 - TDD
-- BDD
+- BDD: 
+- DDD: 
 - SCRUM
 
 ## Design Patterns
