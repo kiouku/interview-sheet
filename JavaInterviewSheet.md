@@ -1,6 +1,6 @@
 # Java Job Interview Questions
 
-This file contains a number of C++ interview questions that can be used when vetting potential candidates. It is by no means recommended to use every single question here on the same candidate (that would take hours). Choosing a few items from this list should help you vet the intended skills you require.
+This file contains a number of Java interview questions that can be used when vetting potential candidates. It is by no means recommended to use every single question here on the same candidate (that would take hours). Choosing a few items from this list should help you vet the intended skills you require.
 
 ## Table of Contents
 

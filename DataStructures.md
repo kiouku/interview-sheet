@@ -26,7 +26,6 @@
 ### Definition
 * Node based collection of elements where every node stores data a reference to other nodes.
 * Nodes, at its most basic it has one data and one reference (another node). These are called single linked list.
-
 		
 ### Need to know
 
@@ -59,7 +58,30 @@
 * Queues are a **first in, first out** (FIFO) data structure
 * Made with a doubly linked list that only removes from head and adds to tail.
 
-## Binary Tree
+## Heap
+
+### Definition
+*  Tree-based data structure that satisfies the heap property: if P is a parent node of C, then the key (the value) of P is either greater than or equal to (in a max heap) or less than or equal to (in a min heap) the key of C.
+					
+### Need to know
+* There is no implied ordering between siblings or cousins and no implied sequence for an in-order traversal. (as there would be in, e.g., a binary search tree)
+* Heaps where the parent key is greater than or equal to (≥) the child keys are called max-heaps; those where it is less than or equal to (≤) are called min-heaps.
+* Used to implement priority queues.
+* Most important operations: extract-min and insertion. Additionally, delete and heapify
+* Applications: Heapsort, event manager(priority queue), median Maintenance problem or speed up Dijkstra's algorithm
+ 
+### Time cost using Big O notation 
+
+| Big O Cost           | Balanced                | Worse | 
+| ---------------------|:-----------------------:|:------| 
+| Indexing             | O(n)                    | O(n)  |
+| Search               | O(n)                    | O(n)  |
+| Min                  | O(1)                    | O(n)  |
+| Insertion            | O(log n)                | O(n)  | 
+| Extract min          | O(log n)                | O(n)  | 
+| Delete               | O(log n)                | O(n)  |
+
+## Binary Tree. A 
 
 ### Definition
 * It is a tree like data structure where every node has at most two children.
@@ -72,42 +94,47 @@
 * A binary tree that uses comparable keys to assign which direction a child is.
 * Left child has a key smaller than it&rsquo;s parent node.
 * Right child has a key greater than it&rsquo;s parent node.
-* There can be no duplicate node.
+* There can be no duplicate nodes.
 * Tree traversal can be done in preorder, inorder and postorder
 * It is usually self-balanced. Automatically keeps its height (maximal number of levels below the root) small in the face of arbitrary item insertions and deletions.
-* Because of the above it is more likely to be used as a data structure than a binary tree.
+* The cost of all its operations depends on the height. O(heigh)
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Average(No rebalance)   | Worse | 
+| Big O Cost           | Balanced                | Worse | 
 | ---------------------|:-----------------------:|:------| 
 | Indexing             | O(log n)                | O(n)  |
 | Search               | O(log n)                | O(n)  |
 | Insertion            | O(log n)                | O(n)  | 
 | Delete               | O(log n)                | O(n)  |
 
-## Heap
+## Balanced Search Trees. Red-Black Trees
 
 ### Definition
-*  Tree-based data structure that satisfies the heap property: if P is a parent node of C, then the key (the value) of P is either greater than or equal to (in a max heap) or less than or equal to (in a min heap) the key of C.
+*  Balanced binary tree data structure that satisfies the red-black tree invariant:
+1 - Each node is red or black.
+2 - Root always black.
+3 - No 2 reds connected to each other.
+4 - every root-null path(unsuccessful search) has the same number of black nodes. 
 					
 ### Need to know
-* The heap is one maximally efficient implementation of an abstract data type called a priority queue.
-* There is no implied ordering between siblings or cousins and no implied sequence for an in-order traversal. (as there would be in, e.g., a binary search tree)
-* Heaps where the parent key is greater than or equal to (≥) the child keys are called max-heaps; those where it is less than or equal to (≤) are called min-heaps.
-* Binary heaps are also commonly employed in the heapsort sorting algorithm, which is an in-place algorithm owing to the fact that binary heaps can be implemented as an implicit data structure, storing keys in an array and using their relative positions within that array to represent child-parent relationships.
-* Used to implement priority queues.
-* Most important operations: extract-min and insertion. Additionally, delete and 
+* The goal of the invariant is to ensure the height stays in O(log n) and hence keeps the tree balanced
+* Other variants: AVL trees, splay trees, B trees
+* Heigh is always <= 2*log(n+1)
+* Basic operations: Rotation and color are the building blocks for insertion and deletion
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Average(No rebalance)   | Worse | 
-| ---------------------|:-----------------------:|:------| 
-| Indexing             | O(n)                    | O(n)  |
-| Search               | O(n)                    | O(n)  |
-| Search  Min          | O(log n)                | O(n)  |
-| Insertion            | O(log n)                | O(n)  | 
-| Delete               | O(log n)                | O(n)  |
+| Big O Cost           | Worse
+| ---------------------|:--------:| 
+| Indexing             | O(log n) |
+| Search               | O(log n) |
+| Insertion            | O(log n) | 
+| Delete               | O(log n) | 
+| Min                  | O(log n) | 
+| Max                  | O(log n) | 
+| Predecessor          | O(log n) | 
+| Successor            | O(log n) |
 
 ## B-Tree
 
@@ -135,6 +162,8 @@
 | Search               | O(1)                    | O(n)  |
 | Insertion            | O(1)                    | O(n)  | 
 | Delete               | O(1)                    | O(n)  |
+
+## Hash vs Balanced Tree vs Sorted Vector
 
 ## Graph
 
