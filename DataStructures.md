@@ -5,7 +5,6 @@
 ### Definition
 * Collection of elements (values or variables) consecutevily allocated in memory, each identified by, most commonly 0 based, index. An array is stored so that the position of each element can be computed from its index tuple by a mathematical formula.
 * Based on tuples from set theory.
-
 		
 ### Need to know
 
@@ -81,7 +80,7 @@
 | Extract min          | O(log n)                | O(n)  | 
 | Delete               | O(log n)                | O(n)  |
 
-## Binary Tree. A 
+## Binary Tree
 
 ### Definition
 * It is a tree like data structure where every node has at most two children.
@@ -141,44 +140,73 @@
 ### Definition
 * Generalization of binary tree. It is a tree like data structure where every node has at most B children.
 
+## Graph
+
+### Definition
+A graph data structure consists of a finite set of nodes, together with a set of unordered pairs of these nodes for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges for an undirected graph and as directed edges for a directed graph.
+
+### Need to know
+* It can be implemented using an adjacency list or a matrix.
+
+### Time cost using Big O notation
+
+| Big O Cost           | Adjacency list   | Adjacency  matrix |
+| ---------------------|:----------------:|:------------------|
+| Store graph          | O(|V|+|E|)       | O(|V|^{2})        |
+| Add vertex           | O(1)             | O(|V|^{2})        |
+| Add edge             | O(1)             | O(1)              |
+| Remove vertex        | O(|E|)           | O(|V|^{2})        |
+| Remove edge          | O(|V|)           | O(1)              |
+
 ## Hash Table
 
 ### Definition
-* Stores data with key value pairs.
+* Stores data with key value pairs. Fast insertions and look ups.
 * **Hash functions** accept a key and return an output unique only to that specific key.
 * This is known as **hashing**, which is the concept that an input and an output have a one-to-one correspondence to map information.
 * Hash functions return a unique address in memory for that data.
 					
 ### Need to know
 * Designed to optimize searching, insertion, and deletion.
-* **Hash collisions** are when a hash function returns the same output for two distinct outputs. All hash functions have this problem. This is often accommodated for by having the hash tables be very large.
-* Hashes are important for associative arrays and database indexing.
+* Hashes does not maintain data order. If this is required an array or SBT should be used.
+* **Hash collisions** are when a hash function returns the same output for two distinct outputs. All hash functions have this problem.
+* Every hash function has a set of pathological data that degradates its performance. A random component is added in the selection of the hash function to
+for security purposes.
+* Two popular ways of handle collisions:
+- Chaining: Every bucket contains a linked list of elements.
+- Open addressing: using probe sequence when there is a collision. Linear probing by trying the buckets adjacent to the one indicated by the hash function. Double probing using 2 hash functions and trying the buckets that both returned If the second hash also fails we use its value as offset for the next attempts.
+* Hashes are important for associative arrays: database indexing, transactions, ip addresses. Deduplication issues. The 2 sum problem. Symbol tables in compilers. Blocking network traffic. Search algorithm speed up.
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Average(No rebalance)   | Worse | 
-| ---------------------|:-----------------------:|:------| 
-| Indexing             | O(1)                    | O(n)  |
-| Search               | O(1)                    | O(n)  |
-| Insertion            | O(1)                    | O(n)  | 
-| Delete               | O(1)                    | O(n)  |
+| Big O Cost           | Average                 | Worse(Patholical data set) |
+| ---------------------|:-----------------------:|:---------------------------|
+| Search               | O(1)                    | O(n)                       |
+| Insertion            | O(1)                    | O(n)                       |
+| Delete               | O(1)                    | O(n)                       |
 
 ## Hash vs Balanced Tree vs Sorted Vector
 
-## Graph
+## Bloom filters or HashSet
 
 ### Definition
-A graph data structure consists of a finite set of nodes, together with a set of unordered pairs of these nodes for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges for an undirected graph and as directed edges for a directed graph.
-					
+Useful to evaluate if a given value is part or not of set of data without need to store the data. This give great space efficiency.
+
 ### Need to know
-* It can be implemented using an adjacency list or a matrix.
+* Similar to hash tables. Fast insertions and look ups.
+* Much more space efficients than hash tables.
+* Does not store the data and hence deletions are not allowed.
+* Small false positive probability. It might indicate that something is inserted in the filter when it was never inserted. This happens when all the bits 
+for all the hash functions of a particle input x are set to 1 by insertions of other objects.
+* Usages: early spellcheckers, list of forbidden passwords, networks routers (Limited space) keep a list of host.
+
+### Implementation
+* Array of n bits so that n/|S|= # of bits per object in dataset S.
+* k hash functions.
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Adjacency list   | Adjacency  matrix | 
-| ---------------------|:----------------:|:------------------| 
-| Store graph          | O(|V|+|E|)       | O(|V|^{2})        |
-| Add vertex           | O(1)             | O(|V|^{2})        |
-| Add edge             | O(1)             | O(1)              | 
-| Remove vertex        | O(|E|)           | O(|V|^{2})        |
-| Remove edge          | O(|V|)           | O(1)              |
+| Big O Cost           | Average(No rebalance)   | Worse |
+| ---------------------|:-----------------------:|:------|
+| Search               | O(1)                    | O(n)  |
+| Insertion            | O(1)                    | O(n)  |

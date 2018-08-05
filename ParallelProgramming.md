@@ -12,8 +12,8 @@ Parallel (Speed up)
 - Examples: Matrix multiplication, big data
 
 Concurrent (Convenience)
-- when can an execution start
-- how can information exchange occur
+- when an execution can start
+- how information exchange can occur
 - how to manage access to shared resources
 - Examples: web servers, UI, Databases
 
@@ -30,8 +30,6 @@ The same program can be started as a process more than once, or even simultaneou
 
 Two different processes can not access earch other's memory directly - they are isolated.
 
-Parallel programming vs Concurrent programming
-
 ## Thread
 ### Definition	
 
@@ -42,7 +40,6 @@ Threads can be started from within the same space program, and they share the sa
 Each thread has a program counter and a program stack.
 
 Each JVM process starts with a main thread. 
-
 
 ## Benchmarking parallel programs
 

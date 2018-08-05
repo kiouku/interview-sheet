@@ -1,7 +1,7 @@
 ## REST
 
 ### Definition
-REST is a software design pattern typically used for web applications. In layman's terms this means that it is a commonly used idea used in many different projects. It stands for REpresentational State Transfer. The basic idea of REST is treating objects on the server-side (as in rows in a database table) as resources than can be created or destroyed.
+REST is a software design pattern typically used for web applications. It stands for REpresentational State Transfer. The basic idea of REST is treating objects on the server-side (as in rows in a database table) as resources than can be created or destroyed.
 
 The most basic way of thinking about REST is as a way of formatting the URLs of your web applications. For example, if your resource was called "posts", then:
 

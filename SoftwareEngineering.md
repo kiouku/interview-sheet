@@ -50,6 +50,9 @@ Duck typing is concerned with establishing the suitability of an object for some
 - Dependency inversion principle
 - bonus: YAGNI, KISS
 
+## Conway's law
+Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.
+
 ## Design smells
 - Rigidity is the tendency of software to be difficult to change. 
 - Fragility is the tendency of software to break in many places when a single change is made. 
