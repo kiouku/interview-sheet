@@ -73,7 +73,6 @@
 
 | Big O Cost           | Balanced                | Worse | 
 | ---------------------|:-----------------------:|:------| 
-| Indexing             | O(n)                    | O(n)  |
 | Search               | O(n)                    | O(n)  |
 | Min                  | O(1)                    | O(n)  |
 | Insertion            | O(log n)                | O(n)  | 
@@ -152,11 +151,11 @@ A graph data structure consists of a finite set of nodes, together with a set of
 
 | Big O Cost           | Adjacency list   | Adjacency  matrix |
 | ---------------------|:----------------:|:------------------|
-| Store graph          | O(|V|+|E|)       | O(|V|^{2})        |
-| Add vertex           | O(1)             | O(|V|^{2})        |
+| Store graph          | O(V + E)         | O(V^{2})          |
+| Add vertex           | O(1)             | O(V^{2})          |
 | Add edge             | O(1)             | O(1)              |
-| Remove vertex        | O(|E|)           | O(|V|^{2})        |
-| Remove edge          | O(|V|)           | O(1)              |
+| Remove vertex        | O(E)             | O(V^{2})          |
+| Remove edge          | O(V)             | O(1)              |
 
 ## Hash Table
 
@@ -175,7 +174,7 @@ for security purposes.
 * Two popular ways of handle collisions:
 - Chaining: Every bucket contains a linked list of elements.
 - Open addressing: using probe sequence when there is a collision. Linear probing by trying the buckets adjacent to the one indicated by the hash function. Double probing using 2 hash functions and trying the buckets that both returned If the second hash also fails we use its value as offset for the next attempts.
-* Hashes are important for associative arrays: database indexing, transactions, ip addresses. Deduplication issues. The 2 sum problem. Symbol tables in compilers. Blocking network traffic. Search algorithm speed up.
+* Hashes are important for associative arrays: database indexing, Deduplication issues. The 2 sum problem. Symbol tables in compilers. Search algorithm speed up.
 
 ### Time cost using Big O notation 
 
@@ -206,7 +205,38 @@ for all the hash functions of a particle input x are set to 1 by insertions of o
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Average(No rebalance)   | Worse |
-| ---------------------|:-----------------------:|:------|
-| Search               | O(1)                    | O(n)  |
-| Insertion            | O(1)                    | O(n)  |
+| Big O Cost           | Worst case |
+| ---------------------|:----------:|
+| Search               | O(1)       |
+| Insertion            | O(1)       |
+
+## Union-find 
+
+### Definition
+Maintains a partition of a set of objects. 
+
+### Need to know
+* Find: returns the partition name to which the given element belongs to.
+* Union: Merges two partitions. 
+* Used to speed up Kruskal's algorithm. Elements stored are the vertex of the graph and
+the groups are connected components by the edges already selected by Kruskal's algorithm.
+
+### Implementation
+* Simple implentation uses a vector. 
+
+### Time cost using Big O notation 
+
+| Big O Cost           | Worst case |
+| ---------------------|:----------:|
+| find                 | O(1)       |
+| union                | O(1)       |
+
+## Union by rank
+
+
+### Time cost using Big O notation 
+
+| Big O Cost           | Worst case |
+| ---------------------|:----------:|
+| find                 | O(log(n))  |
+| union                | O(log(n))  |

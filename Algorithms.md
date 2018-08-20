@@ -7,7 +7,6 @@ Asymptotic computational complexity is the usage of asymptotic analysis (is a me
 
 ### Definition
 
-
 ### Examples
 
 ~~~~
@@ -158,8 +157,6 @@ Makes a sequence of myopic decisions, meaning in the short term these decisions 
 ### What you need to know
 * Most of them are not correct. Correctness difficult to prove.
 * Used to find the optimal solution for a given problem.
-* Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
-* Often a greedy algorithm can help to reduce the Big O of an algorithm.
 * Examples: Dijkstra's shortest path algorithm, Prim's algorithm,Kruskal's algorithm, job scheduler problem, coin change problem, optimal caching, DNA sequence alignment.
 
 ## Dynamic Programming and Memoization
@@ -342,6 +339,7 @@ An algorithm that searches a tree (or graph) by searching levels of the tree fir
 
 #### What you need to know
 * It can be used to computed shortest path to every node in graph with edges of weight 1.
+* It can be used to detect cycles in a graph.
 * Optimal for searching a tree that is wider than it is deep.
 * Uses a queue to store information about the tree while it traverses a tree.
 * Because it uses a queue it is more memory intensive than **depth first search**.
@@ -367,7 +365,7 @@ An algorithm that searches a tree (or graph) by searching depth of the tree firs
 * Optimal for searching a tree that is deeper than it is wide.
 * Uses a stack to push nodes onto.
 * Because a stack is LIFO it does not need to keep track of the nodes pointers and is therefore less memory intensive than breadth first search.
-* Once it cannot go further left it begins evaluating the stack.
+* It can be used to detect cycles in a graph.
 
 #### Big O efficiency
 O(|E| + |V|)
@@ -383,8 +381,6 @@ O(|E| + |V|)
 
 * Because BFS uses queues to store information about the nodes and its children, it could use more memory than is available on your computer. (But you probably won&rsquo;t have to worry about this.)
 * If using a DFS on a tree that is very deep you might go unnecessarily deep in the search. See <a href="http://xkcd.com/761/">xkcd</a> for more information.
-* Breadth First Search tends to be a looping algorithm.
-* Depth First Search tends to be a recursive algorithm.
 
 ### 3. Dijkstra's algorithm. Computing the shortest path problem.
 
@@ -399,13 +395,13 @@ Traveses the graph as breadth search with the peculiarity of applying Dijstra gr
 * It can be optimized to linear time by using a heap where each vertex not visited connected to a vertex already visited is stored using as key the Dijkstra greedy criteria for that node.
 
 #### Big O efficiency
-* Naive implementation O(|E| + |V|)
+* Naive implementation O(|E| * |V|)
 * With heap O(|E| * log|V|)
 
 ### 3. Prim's algorithm. Computing the Minimum Spanning Tree problem.
 
 #### Definition
-Starts from any node. Among all the edges between the already visited nodes and the non visited we select the one with smallest weight. The algorigthm stops when the number of visited nodes is the same as the number of nodes in the graph.
+Greedy algorithm that starts from any node. Among all the edges between the already visited nodes and the non visited we select the one with smallest weight. The algorigthm stops when the number of visited nodes is the same as the number of nodes in the graph.
 
 #### What you need to know:
 
@@ -415,8 +411,43 @@ Starts from any node. Among all the edges between the already visited nodes and 
 
 #### Big O efficiency
 * Assume adjacency list in the graph.
-* Naive implementation O(|E| + |V|)
+* Naive implementation O(|E| * |V|)
 * With heap O(|E| * log|V|)
+
+### 4. Kruskal's algorithm. Computing the Minimum Spanning Tree problem.
+
+#### Definition
+Greedy algorithm that starts by sorting all the edges by weigh. For every edge select the next one that does not introduce a cycle
+
+Note that as oppose to Prim's it can start from any node and instead of growing the MST from adjacent nodes it will grow several graph components that will concur in the MSRT.
+
+#### What you need to know:
+
+* It can be speed up by using union-find data structure instead of perfoming Depth first or breadth first search to detect nodes that might create a cycle in the MST.
+* It works only with undirected graphs.
+* If the given graph is not strongly connected, several iterations of the algorithm computing the MST of each connected component of the graph.
+* Applicacions: network, clustering.
+
+#### Big O efficiency
+* Naive implementation O(|E| * |V|) - Iterate on each edge (E) and detect cycle (V)
+* With Union-Find O(|E| * log|V|) - Sorting
+
+### 5. Single-link Clustering algorithm. Dividing data in groups.
+
+#### Definition
+Given n points (Webpages, images, genome fragments...) we want to classify them into coherent k groups. 
+
+There a function that provides a similarity measurement between each point belonging to diferent clusters. Thing that have similar distance should be group together. Things that have different distance should be kept separated.
+
+Greedy algorithm that Initially each point is classified into a different cluster. Until the desireed number of clusters is reached the closest pair of points not beloging to the same cluster are taken and merged among their corresponding clusters.
+
+#### What you need to know:
+
+* Exactly as Kruskal's but finishing before.
+
+#### Big O efficiency
+* Naive implementation O(|E| * |V|) - Iterate on each edge (E) and detect cycle (V)
+* With Union-Find O(|E| * log|V|) - Sorting
 
 ## Montecarlo estimation
 
