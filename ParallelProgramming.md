@@ -19,7 +19,7 @@ Concurrent (Convenience)
 
 ##OS definition
 ## Definition	
-Software that manages hardware and software resources, and schedules program execution.
+Software that man ages hardware and software resources, and schedules program execution.
 
 ## Process
 ### Definition	

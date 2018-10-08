@@ -230,13 +230,3 @@ the groups are connected components by the edges already selected by Kruskal's a
 | ---------------------|:----------:|
 | find                 | O(1)       |
 | union                | O(1)       |
-
-## Union by rank
-
-
-### Time cost using Big O notation 
-
-| Big O Cost           | Worst case |
-| ---------------------|:----------:|
-| find                 | O(log(n))  |
-| union                | O(log(n))  |
