@@ -21,7 +21,6 @@ The distinction between a lambda and the corresponding closure is precisely equi
 ### Definition
 A closure is any function which closes over the environment in which it was defined. This means that it can access variables not in its parameter list.
 
-
 ## High order function
 
 ### Definition
