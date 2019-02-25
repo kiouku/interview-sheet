@@ -10,6 +10,7 @@ This file contains a number of C++ interview questions that can be used when vet
   1. [Answers](#answer)
 
 #### Language Questions:
+
 * std::set vs std::unordered_set vs std::map vs std::unordered_map?
 * std::vector vs std::list vs std::forward_list vs std::deque cost of inserting an element at the beginning?
 * Resource management. RAII. Locks, memory, files?
@@ -20,4 +21,3 @@ This file contains a number of C++ interview questions that can be used when vet
 * Mutable. Usage to implement lazy evaluation and member function syncronization?
 * Volatile?
 * Tools. clang-tidy?
-				

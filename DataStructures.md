@@ -3,9 +3,10 @@
 ## Array
 
 ### Definition
+
 * Collection of elements (values or variables) consecutevily allocated in memory, each identified by, most commonly 0 based, index. An array is stored so that the position of each element can be computed from its index tuple by a mathematical formula.
 * Based on tuples from set theory.
-		
+
 ### Need to know
 
 * Optimal for indexing; bad at searching, inserting, and deleting (except at the end).
@@ -23,9 +24,10 @@
 ## Linked List
 
 ### Definition
+
 * Node based collection of elements where every node stores data a reference to other nodes.
 * Nodes, at its most basic it has one data and one reference (another node). These are called single linked list.
-		
+
 ### Need to know
 
 * Designed to optimize insertion and deletion, slow at indexing and searching.
@@ -46,13 +48,15 @@
 ## Stack
 
 ### Definition
+
 * Commonly implemented with linked lists but can be made from arrays too.
 * Stacks are **last in, first out** (LIFO) data structures.
 * Made with a linked list by having the head be the only place for insertion and removal.
-		
+  
 ## Queue
 
 ### Definition
+
 * It can be implemented with a linked list or an array.
 * Queues are a **first in, first out** (FIFO) data structure
 * Made with a doubly linked list that only removes from head and adds to tail.
@@ -60,15 +64,17 @@
 ## Heap
 
 ### Definition
-*  Tree-based data structure that satisfies the heap property: if P is a parent node of C, then the key (the value) of P is either greater than or equal to (in a max heap) or less than or equal to (in a min heap) the key of C.
-					
+
+* Tree-based data structure that satisfies the heap property: if P is a parent node of C, then the key (the value) of P is either greater than or equal to (in a max heap) or less than or equal to (in a min heap) the key of C.
+
 ### Need to know
+
 * There is no implied ordering between siblings or cousins and no implied sequence for an in-order traversal. (as there would be in, e.g., a binary search tree)
 * Heaps where the parent key is greater than or equal to (≥) the child keys are called max-heaps; those where it is less than or equal to (≤) are called min-heaps.
 * Used to implement priority queues.
 * Most important operations: extract-min and insertion. Additionally, delete and heapify
 * Applications: Heapsort, event manager(priority queue), median Maintenance problem or speed up Dijkstra's algorithm
- 
+
 ### Time cost using Big O notation 
 
 | Big O Cost           | Balanced                | Worse | 
@@ -82,8 +88,9 @@
 ## Binary Tree
 
 ### Definition
+
 * It is a tree like data structure where every node has at most two children.
-		
+
 ### Need to know
 
 * Designed to optimize searching and sorting.
@@ -109,13 +116,15 @@
 ## Balanced Search Trees. Red-Black Trees
 
 ### Definition
-*  Balanced binary tree data structure that satisfies the red-black tree invariant:
-1 - Each node is red or black.
-2 - Root always black.
-3 - No 2 reds connected to each other.
-4 - every root-null path(unsuccessful search) has the same number of black nodes. 
-					
+
+* Balanced binary tree data structure that satisfies the red-black tree invariant:
+1. Each node is red or black.
+2. Root always black.
+3. No 2 reds connected to each other.
+4. every root-null path(unsuccessful search) has the same number of black nodes. 
+
 ### Need to know
+
 * The goal of the invariant is to ensure the height stays in O(log n) and hence keeps the tree balanced
 * Other variants: AVL trees, splay trees, B trees
 * Heigh is always <= 2*log(n+1)
@@ -145,6 +154,7 @@
 A graph data structure consists of a finite set of nodes, together with a set of unordered pairs of these nodes for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges for an undirected graph and as directed edges for a directed graph.
 
 ### Need to know
+
 * It can be implemented using an adjacency list or a matrix.
 
 ### Time cost using Big O notation
@@ -160,20 +170,21 @@ A graph data structure consists of a finite set of nodes, together with a set of
 ## Hash Table
 
 ### Definition
+
 * Stores data with key value pairs. Fast insertions and look ups.
 * **Hash functions** accept a key and return an output unique only to that specific key.
 * This is known as **hashing**, which is the concept that an input and an output have a one-to-one correspondence to map information.
 * Hash functions return a unique address in memory for that data.
-					
+
 ### Need to know
+
 * Designed to optimize searching, insertion, and deletion.
 * Hashes does not maintain data order. If this is required an array or SBT should be used.
-* **Hash collisions** are when a hash function returns the same output for two distinct outputs. All hash functions have this problem.
-* Every hash function has a set of pathological data that degradates its performance. A random component is added in the selection of the hash function to
-for security purposes.
+* **Hash collisions** are when a hash function returns the same output for two distinct outputs. All hash functions have this       problem.
+* Every hash function has a set of pathological data that degradates its performance. A random component is added in the selection of the hash function to　for security purposes.
 * Two popular ways of handle collisions:
-- Chaining: Every bucket contains a linked list of elements.
-- Open addressing: using probe sequence when there is a collision. Linear probing by trying the buckets adjacent to the one indicated by the hash function. Double probing using 2 hash functions and trying the buckets that both returned If the second hash also fails we use its value as offset for the next attempts.
+  * Chaining: Every bucket contains a linked list of elements.
+  * Open addressing: using probe sequence when there is a collision. Linear probing by trying the buckets adjacent to the one indicated by the hash function. Double probing using 2 hash functions and trying the buckets that both returned If the second hash also fails we use its value as offset for the next attempts.
 * Hashes are important for associative arrays: database indexing, Deduplication issues. The 2 sum problem. Symbol tables in compilers. Search algorithm speed up.
 
 ### Time cost using Big O notation 
@@ -184,22 +195,22 @@ for security purposes.
 | Insertion            | O(1)                    | O(n)                       |
 | Delete               | O(1)                    | O(n)                       |
 
-## Hash vs Balanced Tree vs Sorted Vector
-
 ## Bloom filters or HashSet
 
 ### Definition
+
 Useful to evaluate if a given value is part or not of set of data without need to store the data. This give great space efficiency.
 
 ### Need to know
+
 * Similar to hash tables. Fast insertions and look ups.
 * Much more space efficients than hash tables.
 * Does not store the data and hence deletions are not allowed.
-* Small false positive probability. It might indicate that something is inserted in the filter when it was never inserted. This happens when all the bits 
-for all the hash functions of a particle input x are set to 1 by insertions of other objects.
+* Small false positive probability. It might indicate that something is inserted in the filter when it was　never　inserted.　This　happens when all the bits. For all the hash functions of a particle input x are set to 1 by insertions of other objects.
 * Usages: early spellcheckers, list of forbidden passwords, networks routers (Limited space) keep a list of host.
 
 ### Implementation
+
 * Array of n bits so that n/|S|= # of bits per object in dataset S.
 * k hash functions.
 
@@ -210,19 +221,21 @@ for all the hash functions of a particle input x are set to 1 by insertions of o
 | Search               | O(1)       |
 | Insertion            | O(1)       |
 
-## Union-find 
+## Union-find
 
 ### Definition
-Maintains a partition of a set of objects. 
+
+Maintains a partition of a set of objects.
 
 ### Need to know
+
 * Find: returns the partition name to which the given element belongs to.
-* Union: Merges two partitions. 
-* Used to speed up Kruskal's algorithm. Elements stored are the vertex of the graph and
-the groups are connected components by the edges already selected by Kruskal's algorithm.
+* Union: Merges two partitions.
+* Used to speed up Kruskal's algorithm. Elements stored are the vertex of the graph and the groups are connected components by the edges already selected by Kruskal's algorithm.
 
 ### Implementation
-* Simple implentation uses a vector. 
+
+* Simple implentation uses a vector.
 
 ### Time cost using Big O notation 
 
