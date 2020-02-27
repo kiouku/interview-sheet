@@ -14,12 +14,12 @@
 * **Dynamic arrays** are like one dimensional arrays, but have reserved space for additional elements. If a dynamic array is full, it copies it&rsquo;s contents to a larger array.
 * **Two dimensional arrays** have x and y indices like a grid or nested arrays.
 
-| Big O Cost       | Linear Array  | Dynamic Array  |
-| -----------------|:-------------:| --------------:|
-| Indexing         | O(1)          | O(1)           |
-| Search           | O(n)          | O(n)           |
-| Optimized Search | O(log n)      | O(log n)       |
-| Insertion        | n/a           | O(n)           |
+| Big O Cost       | Linear Array | Dynamic Array |
+| ---------------- | :----------: | ------------: |
+| Indexing         |     O(1)     |          O(1) |
+| Search           |     O(n)     |          O(n) |
+| Optimized Search |   O(log n)   |      O(log n) |
+| Insertion        |     n/a      |          O(n) |
 
 ## Linked List
 
@@ -36,14 +36,14 @@
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Linked List   | 
-| ---------------------|:-------------:| 
-| Indexing             | O(n)          | 
-| Search               | O(n)          | 
-| Insert first or last | O(1)          |
-| Delete first or last | O(1)          |
-| Insertion            | O(n)          | 
-| Delete               | O(n)          | 
+| Big O Cost           | Linked List |
+| -------------------- | :---------: |
+| Indexing             |    O(n)     |
+| Search               |    O(n)     |
+| Insert first or last |    O(1)     |
+| Delete first or last |    O(1)     |
+| Insertion            |    O(n)     |
+| Delete               |    O(n)     |
 
 ## Stack
 
@@ -77,13 +77,13 @@
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Balanced                | Worse | 
-| ---------------------|:-----------------------:|:------| 
-| Search               | O(n)                    | O(n)  |
-| Min                  | O(1)                    | O(n)  |
-| Insertion            | O(log n)                | O(n)  | 
-| Extract min          | O(log n)                | O(n)  | 
-| Delete               | O(log n)                | O(n)  |
+| Big O Cost  | Balanced | Worse |
+| ----------- | :------: | :---- |
+| Search      |   O(n)   | O(n)  |
+| Min         |   O(1)   | O(n)  |
+| Insertion   | O(log n) | O(n)  |
+| Extract min | O(log n) | O(n)  |
+| Delete      | O(log n) | O(n)  |
 
 ## Binary Tree
 
@@ -106,12 +106,12 @@
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Balanced                | Worse | 
-| ---------------------|:-----------------------:|:------| 
-| Indexing             | O(log n)                | O(n)  |
-| Search               | O(log n)                | O(n)  |
-| Insertion            | O(log n)                | O(n)  | 
-| Delete               | O(log n)                | O(n)  |
+| Big O Cost | Balanced | Worse |
+| ---------- | :------: | :---- |
+| Indexing   | O(log n) | O(n)  |
+| Search     | O(log n) | O(n)  |
+| Insertion  | O(log n) | O(n)  |
+| Delete     | O(log n) | O(n)  |
 
 ## Balanced Search Trees. Red-Black Trees
 
@@ -132,16 +132,16 @@
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Worse
-| ---------------------|:--------:| 
-| Indexing             | O(log n) |
-| Search               | O(log n) |
-| Insertion            | O(log n) | 
-| Delete               | O(log n) | 
-| Min                  | O(log n) | 
-| Max                  | O(log n) | 
-| Predecessor          | O(log n) | 
-| Successor            | O(log n) |
+| Big O Cost  |  Worse   |
+| ----------- | :------: |
+| Indexing    | O(log n) |
+| Search      | O(log n) |
+| Insertion   | O(log n) |
+| Delete      | O(log n) |
+| Min         | O(log n) |
+| Max         | O(log n) |
+| Predecessor | O(log n) |
+| Successor   | O(log n) |
 
 ## B-Tree
 
@@ -159,13 +159,13 @@ A graph data structure consists of a finite set of nodes, together with a set of
 
 ### Time cost using Big O notation
 
-| Big O Cost           | Adjacency list   | Adjacency  matrix |
-| ---------------------|:----------------:|:------------------|
-| Store graph          | O(V + E)         | O(V^{2})          |
-| Add vertex           | O(1)             | O(V^{2})          |
-| Add edge             | O(1)             | O(1)              |
-| Remove vertex        | O(E)             | O(V^{2})          |
-| Remove edge          | O(V)             | O(1)              |
+| Big O Cost    | Adjacency list | Adjacency  matrix |
+| ------------- | :------------: | :---------------- |
+| Store graph   |    O(V + E)    | O(V^{2})          |
+| Add vertex    |      O(1)      | O(V^{2})          |
+| Add edge      |      O(1)      | O(1)              |
+| Remove vertex |      O(E)      | O(V^{2})          |
+| Remove edge   |      O(V)      | O(1)              |
 
 ## Hash Table
 
@@ -189,11 +189,11 @@ A graph data structure consists of a finite set of nodes, together with a set of
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Average                 | Worse(Patholical data set) |
-| ---------------------|:-----------------------:|:---------------------------|
-| Search               | O(1)                    | O(n)                       |
-| Insertion            | O(1)                    | O(n)                       |
-| Delete               | O(1)                    | O(n)                       |
+| Big O Cost | Average | Worse(Patholical data set) |
+| ---------- | :-----: | :------------------------- |
+| Search     |  O(1)   | O(n)                       |
+| Insertion  |  O(1)   | O(n)                       |
+| Delete     |  O(1)   | O(n)                       |
 
 ## Bloom filters or HashSet
 
@@ -206,7 +206,7 @@ Useful to evaluate if a given value is part or not of set of data without need t
 * Similar to hash tables. Fast insertions and look ups.
 * Much more space efficients than hash tables.
 * Does not store the data and hence deletions are not allowed.
-* Small false positive probability. It might indicate that something is inserted in the filter when it was　never　inserted.　This　happens when all the bits. For all the hash functions of a particle input x are set to 1 by insertions of other objects.
+* Small false positive probability. It might indicate that something is inserted in the filter when it was　never　inserted.　This　happens when all the bits. For all the hash functions of a particulra input x are set to 1 by insertions of other objects.
 * Usages: early spellcheckers, list of forbidden passwords, networks routers (Limited space) keep a list of host.
 
 ### Implementation
@@ -216,10 +216,10 @@ Useful to evaluate if a given value is part or not of set of data without need t
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Worst case |
-| ---------------------|:----------:|
-| Search               | O(1)       |
-| Insertion            | O(1)       |
+| Big O Cost | Worst case |
+| ---------- | :--------: |
+| Search     |    O(1)    |
+| Insertion  |    O(1)    |
 
 ## Union-find
 
@@ -239,7 +239,11 @@ Maintains a partition of a set of objects.
 
 ### Time cost using Big O notation 
 
-| Big O Cost           | Worst case |
-| ---------------------|:----------:|
-| find                 | O(1)       |
-| union                | O(1)       |
+| Big O Cost | Worst case |
+| ---------- | :--------: |
+| find       |    O(1)    |
+| union      |    O(1)    |
+
+
+## Trie
+A trie is a tree-like data structure whose nodes store the letters of an alphabet. By structuring the nodes in a particular way, words and strings can be retrieved from the structure by traversing down a branch path of the tree.

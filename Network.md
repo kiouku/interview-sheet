@@ -11,7 +11,7 @@ The Internet protocol suite provides end-to-end data communication specifying ho
 
 ### Application Layer
 
-The application layer is the scope within which applications create user data and communicate this data to other applications on another or the same host. The applications, or processes, make use of the services provided by the underlying, lower layers, especially the Transport Layer which provides reliable or unreliable pipes to other processes. The communications partners are characterized by the application architecture, such as the client-server model and peer-to-peer networking. This is the layer in which all higher level protocols, such as SMTP,FTP, SSH, HTTP, operate. Processes are addressed via ports which essentially represent services.
+The application layer is the scope within which applications create user data and communicate this data to other applications on another or the same host. The applications, or processes, make use of the services provided by the underlying, lower layers, especially the Transport Layer which provides reliable or unreliable pipes to other processes. The communications partners are characterized by the application architecture, such as the client-server model and peer-to-peer networking. This is the layer in which all higher level protocols, such as SMTP,FTP, SSH, HTTP, operate. Processes are addressed via ports which essentially represent services.90
 
 ### Transport layer
 
@@ -113,9 +113,21 @@ Digital signatures, in which a message is signed with the sender's private key a
 
 Symmetric encryption uses the same secret key to perform both the encryption and decryption processes.This requirement that both parties have access to the secret key is one of the main drawbacks of symmetric key encryption, in comparison to public-key encryption (also known as asymmetric key encryption).
 
-### Symetric encryption vs asymetric encryption</li>
+### Symetric encryption vs asymetric encryption
 
 - Choosing between symmetric and asymmetric encryption depends on the use case. Symmetric encryption is used to share information between a set of people that all shall have access to it. Furthermore symmetric encryption is nice because it is easier to understand (less likely to mess it up) and the algorithms tend to be faster. Asymmetric encryption is used when a large number of subsets of people shall be able to share information. Furthermore asymmetric cryptography can be used in reverse to sign documents. This is especially interesting because it allows people to certify that a public key belongs to a certain person.
   
 - The disadvantage of symmetric encryption Symmetric encryption always use the same key for encryption and decryption - that is the very definition of it. That has one major downside. If the person doing the encryption and the decryption are not the same, they have to somehow securely share the key. If A generates a random key and encrypts a message for B with it, how does he get the key to B? To do this securely, he has to transmit the key out of bound, or encrypt it with B's public key using asymmetric encryption. Obviously asymmetric encryption does not suffer from this disadvantage, since B can freely share his public key with anybody without loosing any confidentiality.
 - The disadvantage of asymmetric encryption One word: Performance. It is slower than symmetric encryption. Therefore it is in general just used to encrypt a symmetric key that is used to encrypt the rest of the message.
+
+## Browser. Classic use case.
+
+When you type a web address into your browser:
+
+- The browser goes to the DNS server, and finds the real address of the server that the website lives on.
+- The browser sends an HTTP request message to the server, asking it to send a copy of the website to the client. This message, and all other data sent between the client and the server, is sent across your internet connection using TCP/IP.
+- If the server approves the client's request, the server sends the client a "200 OK" message and then starts sending the website's files to the browser as a series of small chunks called data packets.
+- The browser assembles the small chunks into a complete website and displays it to you.
+
+## DNS
+An IP address represents a unique location on the web. However, it's not easy to remember. That's why Domain Name Servers were invented. These are special servers that match up a web address you type into your browser (like "mozilla.org") to the website's real (IP) address.

@@ -8,7 +8,9 @@ Interview sheet
 
 * Software Engineering
   * [Best practices](./SoftwareEngineering.md)
-    * [Architecture](./SoftwareArchitecture.md)
+  * [Architecture](./SoftwareArchitecture.md)
+  * [Distributed Systems](./DistributedSystems.md)
+  * [Design Patterns](./DesignPatterns.md)
 
 * Programming
   * [OOO](./ObjectOrientedProgramming.md)
@@ -17,8 +19,7 @@ Interview sheet
   * [Java](./JavaInterviewSheet.md)
   * [Scala](./ScalaInterviewSheet.md)
   * [C++](./CppInterviewSheet.md)
-
-* [Network](./Network.md)
+  * [Network](./Network.md)
 
 * Softskills
   * [Previous experience with STAR](./SoftSkillsQuestions.html)

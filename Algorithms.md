@@ -133,14 +133,14 @@ An algorithm that is called repeatedly but for a finite number of times, each ti
 ### Pseudo Code of Moving Through an Array (this is why iteration is used for this
 
 ~~~~
-Recursion                         | Iteration
-----------------------------------|----------------------------------
-recursive method (array, n)       | iterative method (array)
-  if array[n] is not nil          |   for n from 0 to size of array
-    print array[n]                |     print(array[n])
-    recursive method(array, n+1)  |
-  else                            |
-    exit loop                     |
+| Recursion                    | Iteration                     |
+| ---------------------------- | ----------------------------- |
+| recursive method (array, n)  | iterative method (array)      |
+| if array[n] is not nil       | for n from 0 to size of array |
+| print array[n]               | print(array[n])               |
+| recursive method(array, n+1) |
+| else                         |
+| exit loop                    |
 ~~~~
 
 # Algorithm Design paradigms
@@ -195,7 +195,7 @@ The next time the same subproblem occurs usually via a recurrence, instead of re
 * Top-down: store the answer for each subproblem in a table to avoid having to recompute them.
 * Bottom-up: Find the right order to evaluate the results so that partial results are available when needed.
 
-### What you need to know:</h4>
+### What you need to know:
 
 * Memoization is a term describing an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 * Dynamic programming is typically implemented using tabulation, but can also be implemented using memoization.

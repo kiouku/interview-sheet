@@ -7,13 +7,6 @@
 - DDD
 - SCRUM
 
-## Design Patterns
-
-- Behavioral
-- Structural
-- Creational
-- Concurrency
-
 ## SOLID principles
 
 - Single responsability principle

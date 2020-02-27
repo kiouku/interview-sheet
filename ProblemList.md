@@ -293,7 +293,7 @@ Greedy algorithm that Initially each point is classified into a different cluste
 
 The goal is to compute all the strongly connected components of a directed graph. directed graphs, a graph is said to be strongly connected or diconnected if every vertex is reachable from every other vertex. The algorithm based on DFS.
 
-Two BFS. First one, iterates on backwards (reversing edges) the graph and creates an array of finishing times. The second DFS processes the nodes in decreasing finishing time(can relabel the nodes) and discovers the leaders of all the strongly connected components.
+Two DFS. First one, iterates on backwards (reversing edges) the graph and creates an array of finishing times. The second DFS processes the nodes in decreasing finishing time(can relabel the nodes) and discovers the leaders of all the strongly connected components.
 
 #### What you need to know:
 
@@ -353,7 +353,7 @@ f(idx,acc,weights)
 {
     if (idx > weights.length)
         return acc
-    s1 = f(idx+1,weights[idx] + acc,weights)
+    s1 = f(idx+2,weights[idx] + acc,weights)
     s2 = f(idx+1,acc,weights)
     return max{s1,s2}
 }
@@ -639,7 +639,7 @@ A problem that has solution in polynomial time
 
 ### Definition
 
-Let X= set of candidate solutions to a problem e.g. cuts of a graph, TSP tours... and a neighborhood such as for each x in X specify which y in X are its neighbours e.g. in the max cut problem x,y are neighbours cuts <=> differ by moving one vertex. in tsp x,y tours are neighbours <=> if differ by 2 edges
+Let X= set of candidate solutions to a problem e.g. cuts of a graph, TSP tours... and a neighborhood such as for each x in X specify which y in X are its neighbours e.g. in the max cut problem x,y are neighbours cuts <=> differ by moving one vertex. in tsp x,y tours are neighbours <=> it differs by 2 edges
 
 1. Let x be some initial solution
 2. while the current solution x has a superior neighboring solution y set x := y
@@ -656,7 +656,6 @@ Let X= set of candidate solutions to a problem e.g. cuts of a graph, TSP tours..
 * How to define a neighborhood? A compromise between solution quality and efficient searchability has to be made. With bigger neighborhoods implies slower to verify local optimality but there are fewer local optimum.
 
 * Local search is not guarantee to converge in polynomial time.
-* Local search converge if every local step improves some objective function
 * In general local optimal solutions are not good aproximations to globally optimal ones.
 
 ## 2-SAT problem. Papadimitriou's algorithm
